@@ -1,0 +1,34 @@
+{
+  "name": "soundbot",
+  "version": "0.1.0",
+  "description": "Bot for making funny sounds on discords voice channel using discord.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andreybest/SoundBot.git"
+  },
+  "keywords": [
+    "bot",
+    "discord.js",
+    "bruh"
+  ],
+  "author": "AndreyBest",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Andreybest/SoundBot/issues"
+  },
+  "homepage": "https://github.com/Andreybest/SoundBot#readme",
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js",
+    "dotenv": "^8.0.0",
+    "ffmpeg-binaries": "^4.0.0",
+    "node-opus": "^0.3.2"
+  },
+  "engines": {
+    "node": "10.15.1"
+  }
+}

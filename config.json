@@ -1,0 +1,12 @@
+{
+    "prefix": "sb!",
+
+    "sounds": [
+        {
+            "command": "bruh",
+            "filename": "bruh.mp3",
+            "nickname": "Bruh Sound Effect #2"
+        }
+    ]
+
+}
