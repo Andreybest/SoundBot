@@ -1,0 +1,1 @@
+Bot for making funny sounds on discords voice channel using discord.js.
