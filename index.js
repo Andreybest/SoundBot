@@ -39,7 +39,7 @@ client.on('message', async msg => {
         if (sounds.length === 1) {
             if (msg.member.voice.channel) {
                 // Set nickname on this server while soundeffect plays.
-                msg.guild.member(client.user).setNickname(sounds[0].nickname);
+                await msg.guild.member(client.user).setNickname(sounds[0].nickname);
 
                 const connection = await msg.member.voice.channel.join();
                 const dispatcher = connection.play('sounds/' + sounds[0].filename);
