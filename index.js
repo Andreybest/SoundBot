@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setActivity(config.played_game);
 });
 
 client.on('message', async msg => {
@@ -29,10 +30,11 @@ client.on('message', async msg => {
     const command = args.shift().toLowerCase();
 
     if (command === 'play') {
-
+        // Joins all arrays in one string (without spaces)
+        var args_string = args.join('');
         // Returns ARRAYS of filtrated by object property
         var sounds = config.sounds.filter(obj => {
-            return obj.command === args[0];
+            return obj.command === args_string;
         });
 
 

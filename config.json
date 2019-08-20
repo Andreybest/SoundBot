@@ -1,12 +1,35 @@
 {
     "prefix": "sb!",
+    "played_game": "sb!help",
 
     "sounds": [
+
         {
             "command": "bruh",
             "filename": "bruh.mp3",
-            "nickname": "Bruh Sound Effect #2"
+            "nickname": "Bruh Sound Effect #2",
+            "description": "Bruh?"
+        },
+        {
+            "command": "wbrb",
+            "filename": "wbrb.mp3",
+            "nickname": "We'll Be Right Back",
+            "description": "We'll Be Right Back!"
+        },
+        {
+            "command": "nope",
+            "filename": "nope.mp3",
+            "nickname": "nope.avi",
+            "description": "Have you seen engies head?"
+        },
+        {
+            "command": "smokeweed",
+            "filename": "smoke-weed.mp3",
+            "nickname": "Snoop Dogg",
+            "description": "420"
         }
+
+
     ]
 
 }
