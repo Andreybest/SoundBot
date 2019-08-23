@@ -1,10 +1,11 @@
 {
   "name": "soundbot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Bot for making funny sounds on discords voice channel using discord.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon index.js",
     "start": "node index.js"
   },
   "repository": {

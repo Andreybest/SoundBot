@@ -1,32 +1,52 @@
 {
     "prefix": "sb!",
     "played_game": "sb!help",
-
+    "join_msgs_channel": "614567916968345630",
+    "leave_msgs_channel": "614567946076815381",
+    
     "sounds": [
 
         {
+            "name": "Bruh Sound Effect #2",
             "command": "bruh",
             "filename": "bruh.mp3",
             "nickname": "Bruh Sound Effect #2",
             "description": "Bruh?"
         },
         {
+            "name": "We'll Be Right Back",
             "command": "wbrb",
             "filename": "wbrb.mp3",
             "nickname": "We'll Be Right Back",
             "description": "We'll Be Right Back!"
         },
         {
+            "name": "nope.avi",
             "command": "nope",
             "filename": "nope.mp3",
             "nickname": "nope.avi",
             "description": "Have you seen engies head?"
         },
         {
+            "name": "Smoke Weed Everyday",
             "command": "smokeweed",
             "filename": "smoke-weed.mp3",
             "nickname": "Snoop Dogg",
             "description": "420"
+        },
+        {
+            "name": "Lakad Matataaag!",
+            "command": "normalin",
+            "filename": "normalin.mp3",
+            "nickname": "Mineski TV",
+            "description": "Normalin, Normalin!"
+        },
+        {
+            "name": "Yeet!",
+            "command": "yeet",
+            "filename": "yeet.mp3",
+            "nickname": "Yeet!",
+            "description": "Just yeet on them. :ok_hand:"
         }
 
 
