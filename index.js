@@ -226,7 +226,7 @@ client.on("guildDelete", guild => {
 })
 
 function update_server_counter () {
-    server_count_channel.setName("Memefing " + client.guilds.size + " servers." )
+    server_count_channel.setName("Memefying " + client.guilds.size + " servers." )
 }
 
 client.login(process.env.DISCORD_TOKEN);
