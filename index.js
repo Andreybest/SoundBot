@@ -91,7 +91,7 @@ client.on('ready', async () => {
     // server_joins_channel = client.channels.get(config.join_msgs_channel);
     // server_leaves_channel = client.channels.get(config.leave_msgs_channel);
     server_count_channel = await client.channels.fetch(config.server_count_channel);
-    setInterval({
+    setInterval(function () {
         update_server_counter();
     }, 5 * 60 * 1000);
 });
@@ -127,7 +127,7 @@ client.on('message', async msg => {
                 const connection = await msg.member.voice.channel.join();
                 const dispatcher = connection.play('sounds/' + sounds[0].filename);
                 dispatcher.on('end', () => {
-                    setTimeout( function () {
+                    setTimeout(function () {
                         dispatcher.destroy();
                         connection.disconnect();
                         msg.guild.member(client.user).setNickname("");
@@ -180,7 +180,7 @@ client.on('message', async msg => {
                     const connection = await msg.member.voice.channel.join();
                     const dispatcher = connection.play('sounds/' + config.sounds[random].filename);
                     dispatcher.on('end', () => {
-                        setTimeout( function () {
+                        setTimeout(function () {
                             dispatcher.destroy();
                             connection.disconnect();
                             msg.guild.member(client.user).setNickname("");
