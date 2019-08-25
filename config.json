@@ -3,6 +3,7 @@
     "played_game": "sb!help",
     "join_msgs_channel": "614567916968345630",
     "leave_msgs_channel": "614567946076815381",
+    "server_count_channel": "615230588147728413",
     
     "sounds": [
 
@@ -47,6 +48,34 @@
             "filename": "yeet.mp3",
             "nickname": "Yeet!",
             "description": "Just yeet on them. :ok_hand:"
+        },
+        {
+            "name": "Roblox Death Sound",
+            "command": "off",
+            "filename": "off.mp3",
+            "nickname": "Roblox Player",
+            "description": "dead"
+        },
+        {
+            "name": "Darth Vader NOOOOOOOOOOO!",
+            "command": "dvnooo",
+            "filename": "dvnooo.mp3",
+            "nickname": "Darth Vader",
+            "description": "How could this happend?"
+        },
+        {
+            "name": "WOW!",
+            "command": "wow",
+            "filename": "wow.mp3",
+            "nickname": "Eddy Wally",
+            "description": ":wink:"
+        },
+        {
+            "name": "Noice!",
+            "command": "noice",
+            "filename": "noice.mp3",
+            "nickname": "Michael Rosen",
+            "description": "*click* noice"
         }
 
 

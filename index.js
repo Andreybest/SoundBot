@@ -20,7 +20,7 @@ const help_embed = new MessageEmbed()
     // Set the main content of the embed
     .addField("sb!play `sound name`", "Play meme sound into your voice channel")
     .addField("sb!sounds", "Open list of all sounds avaliable")
-    //.addField("sb!example", "Play random sound as an example")
+    .addField("sb!example", "Play random sound as an example")
     .addField("sb!server", "Get a link to our support server")
 
 //help_embed.type = "rich";
@@ -82,6 +82,7 @@ const support_server_embed = new MessageEmbed()
 
 var server_joins_channel;
 var server_leaves_channel;
+var server_count_channel;
 client.on('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity(config.played_game);
@@ -89,6 +90,10 @@ client.on('ready', async () => {
     server_leaves_channel = await client.channels.fetch(config.leave_msgs_channel);
     // server_joins_channel = client.channels.get(config.join_msgs_channel);
     // server_leaves_channel = client.channels.get(config.leave_msgs_channel);
+    server_count_channel = await client.channels.fetch(config.server_count_channel);
+    setInterval({
+        update_server_counter();
+    }, 5 * 60 * 1000);
 });
 
 client.on('message', async msg => {
@@ -142,7 +147,6 @@ client.on('message', async msg => {
     }
     else if (command === "help") {
         // Send the embed to the same channel as the message
-        console.log(help_embed);
         msg.channel.send(help_embed);
     }
     else if (command === "sounds") {
@@ -157,6 +161,42 @@ client.on('message', async msg => {
     else if (command === "example") {
         // Plays random sound as an example
         // TO-DO
+        if (msg.member.voice.channel) {
+            msg.channel.startTyping();
+            setTimeout(async function () {
+
+                msg.channel.stopTyping();
+                    
+                var min = 0;   
+                var max = config.sounds.length - 1;
+                var random = Math.floor(Math.random() * (+max - +min)) + +min;
+                msg.channel.send("sb!play " + config.sounds[random].command)
+
+                setTimeout(async function () {
+
+                    // Set nickname on this server while soundeffect plays.
+                    await msg.guild.member(client.user).setNickname(config.sounds[random].nickname);
+
+                    const connection = await msg.member.voice.channel.join();
+                    const dispatcher = connection.play('sounds/' + config.sounds[random].filename);
+                    dispatcher.on('end', () => {
+                        setTimeout( function () {
+                            dispatcher.destroy();
+                            connection.disconnect();
+                            msg.guild.member(client.user).setNickname("");
+                        }, 3000);
+                    });
+
+                }, 1000);
+
+            }, 3000);
+
+        }
+        else {
+            //msg.reply('You need to join a voice channel to use this command!');
+            msg.channel.send(no_user_in_vc_embed);
+        }
+
     }
     else if (command === "server") {
         msg.channel.send(support_server_embed);
@@ -184,5 +224,9 @@ client.on("guildDelete", guild => {
         .setImage(guild.iconURL())
     server_leaves_channel.send(left_guild_embed);
 })
+
+function update_server_counter () {
+    server_count_channel.edit({ name: "Playing memes on " + client.guilds.size + " servers." })
+}
 
 client.login(process.env.DISCORD_TOKEN);
