@@ -1,6 +1,6 @@
 {
   "name": "soundbot",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Bot for making funny sounds on discords voice channel using discord.js",
   "main": "index.js",
   "scripts": {
